@@ -3,290 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top 10 Trends of 2026</title>
+    <title>2026 Trend Forecast | Bloom & Style</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Configure Tailwind to use Inter font and custom palette for consistency -->
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0d0e11; /* Very Dark Background */
+            background-color: #fcf8f9; /* Very light pinkish background */
+            color: #1f2937; /* Dark Slate for elegance */
         }
-        .text-accent {
-            color: #fca5a5; /* Soft Red/Pink for a modern highlight */
+        .section-header-icon {
+            /* Styling for the large header icons */
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
         }
-        .text-primary-light {
-            color: #93c5fd; /* Lighter Blue for visibility on dark background */
-        }
-        .btn-action {
-            background-color: #93c5fd;
-            color: #0d0e11;
-            transition: all 0.3s ease;
-        }
-        .btn-action:hover {
-            background-color: #60a5fa;
-            transform: scale(1.02);
-        }
-        /* Custom styling for the large trend numbers */
-        .trend-number {
-            font-size: 8rem; /* Large number size */
-            line-height: 1;
-            font-weight: 900;
-            color: rgba(255, 255, 255, 0.08); /* Faded white/ghosted look */
-            position: absolute;
-            top: 0rem;
-            left: -0.5rem;
-            z-index: 0;
-            user-select: none;
-        }
-
     </style>
-</head>
-<body class="antialiased text-white">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Custom palette for a luxurious fashion blog feel
+                        'primary-rose': '#f472b6', // Elegant Rose Pink
+                        'secondary-violet': '#a855f7', // Luxurious Violet for depth
+                        'accent-gold': '#f59e0b', // Premium gold accent
+                        'light-bg': '#ffffff',
+                        'dark-text': '#1f2937',
+                        'soft-gray': '#e5e7eb',
+                    }
+                }
+            }
+        }
 
-    <!-- Sticky Header/Navigation (Consistent dark theme) -->
-    <header class="sticky top-0 z-50 bg-gray-900 shadow-xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-extrabold tracking-tight text-white">
-                <a href="./index.html" class="hover:text-primary-light">The Minimalist Wardrobe</a>
-            </h1>
-            <nav class="hidden md:flex space-x-8 text-gray-400 font-medium">
-                <a href="./index.html" class="hover:text-primary-light transition duration-150">Home</a>
-                <a href="./reviews.html" class="hover:text-primary-light transition duration-150">Reviews</a>
-                <a href="./old-topic.html" class="hover:text-primary-light transition duration-150">Sustainability</a>
-                <a href="./trends-2026.html" class="text-primary-light font-bold transition duration-150">2026 Trends</a>
-            </nav>
-            <button class="md:hidden p-2 text-gray-400 hover:text-primary-light rounded-md focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
-            </button>
+        // Placeholder functions for interactive elements (no real functionality needed for a static blog post)
+        function subscribe() {
+            console.log("Subscription button clicked.");
+            // We'll use a modal instead of alert() for user feedback
+            showModal('Subscription Success', 'Thank you for subscribing! Get ready for your weekly dose of 2026 trend alerts directly in your inbox.');
+        }
+
+        function showModal(title, message) {
+            const modal = document.getElementById('custom-modal');
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-message').innerText = message;
+            modal.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('custom-modal');
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+    </script>
+</head>
+<body class="antialiased min-h-screen">
+
+    <!-- Sticky Header/Navigation (Simplified for article page) -->
+    <header class="bg-white shadow-lg sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2 text-2xl font-extrabold text-secondary-violet">
+                <svg class="w-6 h-6 text-primary-rose" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.5v15M6.5 6.5h11a.5.5 0 01.5.5v10a.5.5 0 01-.5.5h-11a.5.5 0 01-.5-.5v-10a.5.5 0 01.5-.5z"></path></svg>
+                <span>Bloom & Style</span>
+            </a>
+            <span class="text-sm font-medium text-gray-500 hidden sm:block">Trend Report: 2026 Forecast</span>
         </div>
     </header>
 
-    <!-- Hero Section: Editorial Look -->
-    <section class="relative bg-gray-900 pt-20 pb-24 overflow-hidden shadow-2xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tighter mb-4 text-white">
-                THE TREND REPORT
-            </h2>
-            <h3 class="text-3xl font-light text-accent italic mb-6">
-                10 Must-Watch Shifts Defining Fashion in 2026
-            </h3>
-            <p class="text-xl text-gray-400 max-w-4xl mx-auto">
-                Our annual foresight report analyzes data from runway shows, consumer behavioral shifts, and material innovation to predict the biggest movements shaping the future of style.
-            </p>
-            <a href="#trends-grid" class="mt-10 inline-flex items-center justify-center px-10 py-4 text-lg font-semibold rounded-full btn-action shadow-lg hover:shadow-xl">
-                Explore The Future &darr;
-            </a>
-        </div>
-    </section>
+    <main class="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
 
-    <!-- Main Content: Trend Grid -->
-    <main id="trends-grid" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <!-- Article Hero Section -->
+        <article class="bg-white rounded-3xl shadow-2xl p-6 sm:p-10 lg:p-12 mb-12 border-4 border-secondary-violet/20">
 
-        <h3 class="text-4xl font-extrabold mb-12 text-center text-white">
-            Top 10 Global Trends
-        </h3>
-        
-        <!-- Grid Container for Trends (Responsive layout) -->
-        <div class="grid md:grid-cols-2 gap-x-8 gap-y-16">
+            <header class="text-center mb-10">
+                <h1 class="text-5xl sm:text-7xl font-extrabold tracking-tighter leading-none text-dark-text mb-4">
+                    The 2026 Aesthetic Shift
+                </h1>
+                <p class="text-2xl text-primary-rose font-light italic mt-4">
+                    From Bio-Skins to Digital Nostalgia: The Trends Defining Next Year
+                </p>
+                <div class="text-gray-500 mt-6 text-sm">
+                    Published: October 15, 2025 | By The B&S Editorial Team
+                </div>
+            </header>
 
-            <!-- Trend 1: Adaptive Materials -->
-            <div class="relative bg-gray-800 p-8 rounded-xl shadow-2xl overflow-hidden group">
-                <span class="trend-number">01</span>
-                <div class="relative z-10">
-                    <h4 class="text-3xl font-extrabold mb-3 text-primary-light pt-8">The Rise of Adaptive Textiles</h4>
-                    <p class="text-gray-300 mb-4">
-                        Clothing that automatically adjusts insulation based on ambient temperature or body heat will move from concept to mass market reality, driven by military research filtering into luxury sportswear.
+            <!-- Introduction -->
+            <section class="mb-12 border-l-4 border-primary-rose pl-6">
+                <p class="text-xl text-gray-700 leading-relaxed">
+                    The fashion and beauty world is on the cusp of a revolutionary year. 2026 is poised to be defined not just by new colors or cuts, but by fundamental shifts in consumer values: **hyper-authenticity, functional luxury, and a deep appreciation for the engineered.** We're moving past fleeting micro-trends into an era where style is deeply integrated with personal wellness and sustainable technology. Get ready for a year of structural design, science-backed beauty, and the ultimate blurring of the physical and digital self.
+                </p>
+            </section>
+
+            <!-- --- SECTION 1: FASHION & SILHOUETTES --- -->
+            <div class="mt-16 pt-8 border-t border-soft-gray">
+                <div class="flex items-center space-x-4 mb-6">
+                    <div class="w-12 h-12 bg-secondary-violet text-white flex items-center justify-center rounded-lg section-header-icon">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l-2 2M15 19V6l2 2M12 6h2M12 6V3M7 14h10M7 18h10"></path></svg>
+                    </div>
+                    <h2 class="text-3xl font-bold text-secondary-violet">I. The Future of Fabric: Sculptural & Engineered</h2>
+                </div>
+
+                <!-- Trend 1.1: New Architecture -->
+                <div class="mb-8 p-4 border border-soft-gray rounded-xl">
+                    <h3 class="text-2xl font-semibold text-dark-text mb-2">1. The New Architecture: Sculptural Silhouettes</h3>
+                    <p class="text-gray-600 leading-loose">
+                        Forget slouchy knitwear; 2026 is bringing structure back. We see a strong move towards architectural clothing, where garments feel engineered rather than simply draped. Think sharp shoulders, cocoon-like coats, and asymmetrical hemlines that hold their form. This trend is less about pattern and more about form—the body becomes the frame for wearable art. Expect materials like bonded jersey, crisp poplin, and innovative, recycled nylons that maintain rigidity while remaining lightweight.
                     </p>
-                    <img class="rounded-lg w-full h-48 object-cover object-center mb-4 opacity-70 group-hover:opacity-100 transition duration-300" 
-                         src="https://placehold.co/600x300/374151/fca5a5?text=Adaptive+Fabric+Detail" 
-                         alt="Close-up of smart textile fabric"
-                         onerror="this.onerror=null; this.src='https://placehold.co/600x300/374151/fca5a5?text=Adaptive+Fabric+Detail';">
-                    <a href="#" class="text-accent font-semibold hover:underline text-sm tracking-wider">
-                        Deep Dive: Material Science &rarr;
-                    </a>
+                </div>
+
+                <!-- Trend 1.2: Hyper-Tactile Fibers -->
+                <div class="mb-8 p-4 border border-soft-gray rounded-xl">
+                    <h3 class="text-2xl font-semibold text-dark-text mb-2">2. Hyper-Tactile, Auditory Fibers</h3>
+                    <p class="text-gray-600 leading-loose">
+                        In a world saturated with digital interfaces, consumers are craving physical sensory experiences. 2026 introduces *auditory* textiles—fabrics that rustle, crinkle, or swish as you move, adding another layer to personal expression. Along with this, watch for super-textured materials: heavy bouclé, irregularly ribbed velvets, and exaggerated chenille. Color palettes for these pieces lean into sophisticated neutrals—stone, charcoal, sage, and deep navy—letting the texture and movement speak for themselves.
+                    </p>
+                </div>
+
+                <!-- Trend 1.3: Digital Nostalgia -->
+                <div class="mb-8 p-4 border border-soft-gray rounded-xl">
+                    <h3 class="text-2xl font-semibold text-dark-text mb-2">3. Digital Nostalgia and the Pixel Print</h3>
+                    <p class="text-gray-600 leading-loose">
+                        The digital realm finally merges fully with physical fashion, moving past metaverse novelty into real-world prints. Look out for "Pixelation Prints," which involve blurred, low-resolution patterns that resemble early video game graphics or digital glitches. This trend taps into Y2K and early internet nostalgia, applying abstract, colorful blocks to modern, clean-cut garments like tailored trousers and sleek midi dresses. It's a playful yet chic nod to where our collective attention is focused.
+                    </p>
                 </div>
             </div>
 
-            <!-- Trend 2: Digital Craftsmanship -->
-            <div class="relative bg-gray-800 p-8 rounded-xl shadow-2xl overflow-hidden group">
-                <span class="trend-number">02</span>
-                <div class="relative z-10">
-                    <h4 class="text-3xl font-extrabold mb-3 text-primary-light pt-8">Digital Craftsmanship</h4>
-                    <p class="text-gray-300 mb-4">
-                        We will see an aesthetic shift towards items that blend high-touch artisan methods (hand-stitching, natural dyeing) with hyper-precise digital design (3D printing, laser cutting). Imperfect perfection is key.
+            <!-- --- SECTION 2: BEAUTY, SKIN & WELLNESS --- -->
+            <div class="mt-16 pt-8 border-t border-soft-gray">
+                <div class="flex items-center space-x-4 mb-6">
+                    <div class="w-12 h-12 bg-primary-rose text-white flex items-center justify-center rounded-lg section-header-icon">
+                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0zM12 14v4M12 10V6M9 12h6"></path></svg>
+                    </div>
+                    <h2 class="text-3xl font-bold text-primary-rose">II. Bio-Aesthetics: Science & Skinimalism</h2>
+                </div>
+
+                <!-- Trend 2.1: Skinimalism 2.0 -->
+                <div class="mb-8 p-4 border border-soft-gray rounded-xl">
+                    <h3 class="text-2xl font-semibold text-dark-text mb-2">4. Skinimalism 2.0: The Optimized Routine</h3>
+                    <p class="text-gray-600 leading-loose">
+                        The obsession with multi-step routines is officially over. Skinimalism 2.0 focuses purely on **efficacy and ingredient synergy.** Products must multitask, not just combine steps. We're seeing a boom in sophisticated, all-in-one serum-creams formulated with five or fewer high-impact active ingredients that target microbiome health and barrier function. The aesthetic is clinical, minimalist, and focuses on results that speak louder than layers of product.
                     </p>
-                    <img class="rounded-lg w-full h-48 object-cover object-center mb-4 opacity-70 group-hover:opacity-100 transition duration-300" 
-                         src="https://placehold.co/600x300/374151/fca5a5?text=3D+Printed+Embroidery" 
-                         alt="Image showing a blend of traditional embroidery and 3D printing textures"
-                         onerror="this.onerror=null; this.src='https://placehold.co/600x300/374151/fca5a5?text=3D+Printed+Embroidery';">
-                    <a href="#" class="text-accent font-semibold hover:underline text-sm tracking-wider">
-                        See the Designers Embracing This &rarr;
-                    </a>
+                </div>
+
+                <!-- Trend 2.2: Functional Color -->
+                <div class="mb-8 p-4 border border-soft-gray rounded-xl">
+                    <h3 class="text-2xl font-semibold text-dark-text mb-2">5. Functional Color and Neuro-Aesthetics</h3>
+                    <p class="text-gray-600 leading-loose">
+                        Makeup is becoming a tool for mood management. "Functional Color" uses specific hues known to affect neurological responses. For instance, soft blues and pale greens for calming effects, or vibrant oranges and pinks for energy. This goes beyond simple color choice—it's about pigment stability and light refraction engineered to subtly alter the wearer's perception and state of mind. Look for makeup formulas infused with mood-boosting scents like adaptogens.
+                    </p>
+                </div>
+
+                <!-- Trend 2.3: Bio-Hacking Haircare -->
+                <div class="mb-8 p-4 border border-soft-gray rounded-xl">
+                    <h3 class="text-2xl font-semibold text-dark-text mb-2">6. Haircare as Bio-Hacking</h3>
+                    <p class="text-gray-600 leading-loose">
+                        The scalp is the new skin. Advanced haircare will focus on genetic predisposition and environmental stressors. Custom formulations based on at-home genetic testing and advanced ingredient delivery systems (think micro-needling tools for the scalp) are going mainstream. The goal is to optimize follicle health from the inside out, moving away from temporary shine and towards lifelong vitality and density.
+                    </p>
                 </div>
             </div>
 
-            <!-- Trend 3: Utility Luxe -->
-            <div class="relative bg-gray-800 p-8 rounded-xl shadow-2xl overflow-hidden group">
-                <span class="trend-number">03</span>
-                <div class="relative z-10">
-                    <h4 class="text-3xl font-extrabold mb-3 text-primary-light pt-8">The Utility Luxe Silhouette</h4>
-                    <p class="text-gray-300 mb-4">
-                        Post-pandemic life demands functionality, but executed in premium fabrics. Think cargo pants in silk, multi-pocket vests in Italian wool, and detachable elements on structured coats.
+            <!-- --- SECTION 3: LIFESTYLE & RETAIL EXPERIENCE --- -->
+            <div class="mt-16 pt-8 border-t border-soft-gray">
+                <div class="flex items-center space-x-4 mb-6">
+                    <div class="w-12 h-12 bg-accent-gold text-white flex items-center justify-center rounded-lg section-header-icon">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.941 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.941 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.941-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.941-1.543.826-3.31 2.37-2.37a1.724 1.724 0 002.572-1.065z"></path></svg>
+                    </div>
+                    <h2 class="text-3xl font-bold text-accent-gold">III. Retail & Experiential Evolution</h2>
+                </div>
+
+                <!-- Trend 3.1: Curated Capsule Experience -->
+                <div class="mb-8 p-4 border border-soft-gray rounded-xl">
+                    <h3 class="text-2xl font-semibold text-dark-text mb-2">7. The Curated Capsule Experience</h3>
+                    <p class="text-gray-600 leading-loose">
+                        Consumers are exhausted by infinite scrolling. 2026 will see e-commerce platforms pivot to highly curated, rotating "Capsule" edits. These aren't just collections; they are limited-time, theme-based micro-stores featuring only 5-10 complementary products (e.g., "The Rainforest Glow" or "The Minimalist Commute"). This system combats decision fatigue and drives urgency, making every purchase feel like a deliberate, stylish choice.
                     </p>
-                    <img class="rounded-lg w-full h-48 object-cover object-center mb-4 opacity-70 group-hover:opacity-100 transition duration-300" 
-                         src="https://placehold.co/600x300/374151/fca5a5?text=Luxury+Functional+Wear" 
-                         alt="High-end utility jacket detail"
-                         onerror="this.onerror=null; this.src='https://placehold.co/600x300/374151/fca5a5?text=Luxury+Functional+Wear';">
-                    <a href="#" class="text-accent font-semibold hover:underline text-sm tracking-wider">
-                        Shop Curated Utility Pieces &rarr;
-                    </a>
+                </div>
+
+                <!-- Trend 3.2: Hyper-Personalized Retail -->
+                <div class="mb-8 p-4 border border-soft-gray rounded-xl">
+                    <h3 class="text-2xl font-semibold text-dark-text mb-2">8. AI-Driven Hyper-Personalized Retail</h3>
+                    <p class="text-gray-600 leading-loose">
+                        AI will move beyond "you might also like" and begin integrating behavioral psychology and climate data into recommendations. Platforms will suggest outfits based not just on your purchase history, but on the weather forecast for your location, your calendar events (e.g., "suggesting a sophisticated work look for your Thursday meeting"), and even your current mood profile (inferred through app usage patterns).
+                    </p>
+                </div>
+
+                <!-- Trend 3.3: The Resale Economy as Luxury -->
+                <div class="mb-8 p-4 border border-soft-gray rounded-xl">
+                    <h3 class="text-2xl font-semibold text-dark-text mb-2">9. The Resale Economy as Luxury</h3>
+                    <p class="text-gray-600 leading-loose">
+                        The perception of pre-owned luxury will fully transition from "thrift" to "curated archive." Brands will invest heavily in certified pre-owned programs, offering warranties and professional restoration services. Owning a piece from a past season will become a sign of **insider knowledge and sustainable wealth**, driving up the desirability of expertly authenticated and restored heritage items.
+                    </p>
                 </div>
             </div>
 
-            <!-- Trend 4: Hyper-Personalized Fit -->
-            <div class="relative bg-gray-800 p-8 rounded-xl shadow-2xl overflow-hidden group">
-                <span class="trend-number">04</span>
-                <div class="relative z-10">
-                    <h4 class="text-3xl font-extrabold mb-3 text-primary-light pt-8">Hyper-Personalized Fit</h4>
-                    <p class="text-gray-300 mb-4">
-                        AI-powered sizing apps and affordable made-to-measure services will make off-the-rack clothing feel obsolete. Consumers will prioritize garments tailored exactly to their unique body scan data.
-                    </p>
-                    <img class="rounded-lg w-full h-48 object-cover object-center mb-4 opacity-70 group-hover:opacity-100 transition duration-300" 
-                         src="https://placehold.co/600x300/374151/fca5a5?text=Digital+Body+Scan" 
-                         alt="A digital rendering of a tailored garment on a body scan"
-                         onerror="this.onerror=null; this.src='https://placehold.co/600x300/374151/fca5a5?text=Digital+Body+Scan';">
-                    <a href="#" class="text-accent font-semibold hover:underline text-sm tracking-wider">
-                        Explore Fit-Tech Innovations &rarr;
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Trend 5: Bio-Design Aesthetics -->
-            <div class="relative bg-gray-800 p-8 rounded-xl shadow-2xl overflow-hidden group">
-                <span class="trend-number">05</span>
-                <div class="relative z-10">
-                    <h4 class="text-3xl font-extrabold mb-3 text-primary-light pt-8">Bio-Design Aesthetics</h4>
-                    <p class="text-gray-300 mb-4">
-                        As bio-materials (mushroom leather, algae dyes) become mainstream, the visual language of fashion will reflect nature's textures and forms, emphasizing organic, asymmetrical, and subtly distressed finishes.
-                    </p>
-                    <img class="rounded-lg w-full h-48 object-cover object-center mb-4 opacity-70 group-hover:opacity-100 transition duration-300" 
-                         src="https://placehold.co/600x300/374151/fca5a5?text=Mushroom+Leather" 
-                         alt="Texture of mushroom leather"
-                         onerror="this.onerror=null; this.src='https://placehold.co/600x300/374151/fca5a5?text=Mushroom+Leather';">
-                    <a href="#" class="text-accent font-semibold hover:underline text-sm tracking-wider">
-                        Read Our Sustainability Focus Page &rarr;
-                    </a>
-                </div>
-            </div>
+            <!-- Conclusion/Call to Action -->
+            <section class="mt-16 pt-8 border-t border-secondary-violet">
+                <h2 class="text-3xl font-bold text-center text-dark-text mb-4">Your Style Roadmap for 2026</h2>
+                <p class="text-lg text-center text-gray-700 max-w-2xl mx-auto">
+                    2026 will reward the thoughtful, the minimal, and the scientifically informed consumer. We encourage you to embrace these shifts by investing in pieces that are engineered to last and products that truly improve your health. The era of conscious luxury has arrived.
+                </p>
 
-            <!-- Trend 6: Neo-Baroque Accessories -->
-            <div class="relative bg-gray-800 p-8 rounded-xl shadow-2xl overflow-hidden group">
-                <span class="trend-number">06</span>
-                <div class="relative z-10">
-                    <h4 class="text-3xl font-extrabold mb-3 text-primary-light pt-8">Neo-Baroque Accessories</h4>
-                    <p class="text-gray-300 mb-4">
-                        In an otherwise minimalist world, accessories provide the drama. Expect highly detailed, oversized, and sculptural jewelry, bags, and belts, often featuring recycled metals and complex textures.
-                    </p>
-                    <img class="rounded-lg w-full h-48 object-cover object-center mb-4 opacity-70 group-hover:opacity-100 transition duration-300" 
-                         src="https://placehold.co/600x300/374151/fca5a5?text=Sculptural+Jewelry" 
-                         alt="Oversized, sculptural jewelry piece"
-                         onerror="this.onerror=null; this.src='https://placehold.co/600x300/374151/fca5a5?text=Sculptural+Jewelry';">
-                    <a href="#" class="text-accent font-semibold hover:underline text-sm tracking-wider">
-                        Best Accessory Brands for 2026 &rarr;
-                    </a>
+                <!-- Newsletter Signup Section -->
+                <div class="mt-8 p-6 bg-primary-rose/10 rounded-xl text-center shadow-inner">
+                    <p class="text-xl font-semibold text-secondary-violet mb-3">Want more exclusive trend alerts?</p>
+                    <div class="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4">
+                        <input type="email" placeholder="Enter your email address" class="w-full sm:w-80 px-4 py-3 rounded-full border-2 border-primary-rose focus:ring-secondary-violet focus:border-secondary-violet transition duration-300 shadow-md" aria-label="Email for newsletter subscription">
+                        <button onclick="subscribe()" class="px-6 py-3 bg-secondary-violet text-white font-semibold rounded-full hover:bg-primary-rose transition duration-300 shadow-lg">
+                            Get Weekly Updates
+                        </button>
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            <!-- Trend 7: The "New" Neutral Palette -->
-            <div class="relative bg-gray-800 p-8 rounded-xl shadow-2xl overflow-hidden group">
-                <span class="trend-number">07</span>
-                <div class="relative z-10">
-                    <h4 class="text-3xl font-extrabold mb-3 text-primary-light pt-8">The "New" Neutral Palette</h4>
-                    <p class="text-gray-300 mb-4">
-                        The core neutral colors are shifting from beige and gray to saturated, dark earth tones: deep forest green, burnt umber, charcoal blue, and oxblood red. These offer depth while maintaining versatility.
-                    </p>
-                    <img class="rounded-lg w-full h-48 object-cover object-center mb-4 opacity-70 group-hover:opacity-100 transition duration-300" 
-                         src="https://placehold.co/600x300/374151/fca5a5?text=Dark+Earth+Palette" 
-                         alt="Color swatch of deep earth tones"
-                         onerror="this.onerror=null; this.src='https://placehold.co/600x300/374151/fca5a5?text=Dark+Earth+Palette';">
-                    <a href="#" class="text-accent font-semibold hover:underline text-sm tracking-wider">
-                        How to Style Dark Neutrals &rarr;
-                    </a>
-                </div>
-            </div>
-
-            <!-- Trend 8: Modular Footwear -->
-            <div class="relative bg-gray-800 p-8 rounded-xl shadow-2xl overflow-hidden group">
-                <span class="trend-number">08</span>
-                <div class="relative z-10">
-                    <h4 class="text-3xl font-extrabold mb-3 text-primary-light pt-8">Modular Footwear Design</h4>
-                    <p class="text-gray-300 mb-4">
-                        Shoes with interchangeable components (heels, soles, straps) will increase durability and customization. Consumers can easily swap parts to transform a boot into a sandal or change a heel height.
-                    </p>
-                    <img class="rounded-lg w-full h-48 object-cover object-center mb-4 opacity-70 group-hover:opacity-100 transition duration-300" 
-                         src="https://placehold.co/600x300/374151/fca5a5?text=Modular+Shoe+Design" 
-                         alt="Diagram of a shoe with detachable components"
-                         onerror="this.onerror=null; this.src='https://placehold.co/600x300/374151/fca5a5?text=Modular+Shoe+Design';">
-                    <a href="#" class="text-accent font-semibold hover:underline text-sm tracking-wider">
-                        Featured Modular Brands &rarr;
-                    </a>
-                </div>
-            </div>
-
-            <!-- Trend 9: Responsible Wearables -->
-            <div class="relative bg-gray-800 p-8 rounded-xl shadow-2xl overflow-hidden group">
-                <span class="trend-number">09</span>
-                <div class="relative z-10">
-                    <h4 class="text-3xl font-extrabold mb-3 text-primary-light pt-8">Invisible Wearables</h4>
-                    <p class="text-gray-300 mb-4">
-                        Smart technology integrated into apparel will become less visible and more seamless. Functionality like biometric monitoring and subtle haptic feedback will be built into the fabric itself, not chunky devices.
-                    </p>
-                    <img class="rounded-lg w-full h-48 object-cover object-center mb-4 opacity-70 group-hover:opacity-100 transition duration-300" 
-                         src="https://placehold.co/600x300/374151/fca5a5?text=Biometric+Fabric" 
-                         alt="Close-up of high-tech smart fabric"
-                         onerror="this.onerror=null; this.src='https://placehold.co/600x300/374151/fca5a5?text=Biometric+Fabric';">
-                    <a href="#" class="text-accent font-semibold hover:underline text-sm tracking-wider">
-                        The Future of Connected Apparel &rarr;
-                    </a>
-                </div>
-            </div>
-
-            <!-- Trend 10: Reimagined Formalwear -->
-            <div class="relative bg-gray-800 p-8 rounded-xl shadow-2xl overflow-hidden group">
-                <span class="trend-number">10</span>
-                <div class="relative z-10">
-                    <h4 class="text-3xl font-extrabold mb-3 text-primary-light pt-8">The Reimagined Suit</h4>
-                    <p class="text-gray-300 mb-4">
-                        The traditional suit is dead; long live the soft suit. Formal attire will prioritize comfort, incorporating four-way stretch fabrics, unlined construction, and relaxed, oversized tailoring suitable for both video calls and travel.
-                    </p>
-                    <img class="rounded-lg w-full h-48 object-cover object-center mb-4 opacity-70 group-hover:opacity-100 transition duration-300" 
-                         src="https://placehold.co/600x300/374151/fca5a5?text=Soft+Tailoring" 
-                         alt="Image of a relaxed, comfortable tailored suit"
-                         onerror="this.onerror=null; this.src='https://placehold.co/600x300/374151/fca5a5?text=Soft+Tailoring';">
-                    <a href="#" class="text-accent font-semibold hover:underline text-sm tracking-wider">
-                        View our Comfort-First Tailoring Picks &rarr;
-                    </a>
-                </div>
-            </div>
-
-        </div>
-
+        </article>
     </main>
 
-    <!-- Footer (Consistent dark theme) -->
-    <footer class="bg-gray-900 mt-16">
-        <div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
-            <div class="mt-8 flex justify-center space-x-6">
-                <a href="#" class="text-gray-400 hover:text-white transition duration-150">Forecast Methodology</a>
-                <a href="#" class="text-gray-400 hover:text-white transition duration-150">Contact Analysts</a>
-                <a href="#" class="text-gray-400 hover:text-white transition duration-150">Privacy Policy</a>
-            </div>
-            <p class="mt-8 text-center text-base text-gray-400">
-                &copy; 2025 The Minimalist Wardrobe. All Trend Data is for forward-looking analysis only.
-            </p>
+    <!-- Footer (Matching the main page) -->
+    <footer class="bg-dark-text mt-12 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-white text-xl font-bold mb-3">Bloom & Style</p>
+            <p class="text-gray-400 text-sm">© 2025 Bloom & Style, LLC. All rights reserved. | Style, Substance, and Transparency.</p>
         </div>
     </footer>
+
+    <!-- Custom Modal Structure (Hidden by default, copied from index for consistency) -->
+    <div id="custom-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center p-4">
+        <div class="bg-white rounded-xl p-8 max-w-lg w-full shadow-2xl transform transition-all scale-100">
+            <h3 id="modal-title" class="text-2xl font-bold text-primary-rose mb-4">Modal Title</h3>
+            <p id="modal-message" class="text-gray-700 mb-6">Modal Content Message</p>
+            <button onclick="closeModal()" class="w-full px-4 py-2 bg-secondary-violet text-white rounded-full hover:bg-primary-rose transition duration-300">
+                Close
+            </button>
+        </div>
+    </div>
 
 </body>
 </html>
